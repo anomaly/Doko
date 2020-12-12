@@ -45,8 +45,8 @@ An abstract is a strictly defined section that provides the user the minimum amo
 Example:
 
 ```html
-<meta name="doko:title" content="Wattle Cloud Platform"/>
-<meta name="doko:subtitle" content="www.wattle.dev"/>
+<meta name="doko:title" content="Anomaly Software"/>
+<meta name="doko:subtitle" content="https://anomaly.netlifyapp.com"/>
 ```
 
 ### Facts
@@ -56,7 +56,7 @@ Facts are a key, value pairs that are displayed by the plugin in the expanded st
 Example:
 
 ```html
-<meta name="doko:fact" content="Server|Docker / Kestrel 2.0"/>
+<meta name="doko:fact" content="Server|Netlify"/>
 <meta name="doko:fact" content="Database|PostgreSQL 2.0"/>
 <meta name="doko:fact" content="Node|ap-01a"/>
 ```
@@ -68,10 +68,23 @@ This section is reserved to provide links to feedback systems like issue tracker
 Example:
 
 ```html
-<meta name="doko:postissue" content="https://github.com/wattlecloud/wattle/issues/new"/>
+<meta name="doko:postissue" content="https://github.com/anomaly/anomaly/issues/new"/>
 ```
 
 > Doko proposes to develop this further in the future to include in plugin integration with selected services.
 
 ## Plugin Behaviour
 
+The proposed widget will have three states:
+
+- **Condensed** - displaying a badge only
+- **Abstract** - displaying a badge, and the abstract
+- **Expanded** - displaying all content proposed by the protocol
+
+Interactions:
+
+- Clicking the badge toggles between the condensed and abstract views
+- The abstract view reveals a chevron that allows the user to expand and contract between the abstract and expanded views
+- At any stage clicking the badge toggles it back to the condensed view
+- Clicking the "Open an Issue" link will open a new issue in the designated hosted issue tracker
+- the `production`, `staging`, `development` keywords determine the badge that's displayed in the  widget
