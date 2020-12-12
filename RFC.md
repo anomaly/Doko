@@ -40,7 +40,9 @@ Example:
 
 ### Abstract
 
+An abstract is a strictly defined section that provides the user the minimum amount of context of the environment. It allows you to provide a `title` and a `subtitle` - the content can be determined by the application, and should be limited to a `30` characters.
 
+Example:
 
 ```html
 <meta name="doko:title" content="Wattle Cloud Platform"/>
@@ -48,6 +50,10 @@ Example:
 ```
 
 ### Facts
+
+Facts are a key, value pairs that are displayed by the plugin in the expanded state. You may provide as many `facts` as you feel relevant for your application. However it's considered best practice to limit it to `five`.
+
+Example:
 
 ```html
 <meta name="doko:fact" content="Server|Docker / Kestrel 2.0"/>
@@ -57,10 +63,15 @@ Example:
 
 ### Feedback
 
+This section is reserved to provide links to feedback systems like issue trackers.
+
+Example:
+
 ```html
 <meta name="doko:postissue" content="https://github.com/wattlecloud/wattle/issues/new"/>
 ```
 
+> Doko proposes to develop this further in the future to include in plugin integration with selected services.
 
 ## Plugin Behaviour
 
