@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "Doko",
+  "version": "0.1",
+  "description": "A developer focused plugin to help navigate between deployment environments.",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "js": ["static/js/content.js"],
+      "css": ["static/css/content.css"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "web_accessible_resources": ["/arrow.svg", "/github.svg"],
+  "icons": {
+    "192": "doko.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "192": "doko.png"
+    },
+    "default_title": "Popup",
+    "default_popup": "popup.html"
+  }
+}
