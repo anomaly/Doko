@@ -17,6 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-app-rewired build",
+    "build:firefox": "yarn build && sed -i '' '$s/}/, \"browser_specific_settings\": {\"gecko\": {\"id\": \"doko@anomaly.net.au\"}}}/' build/manifest.json",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
