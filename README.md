@@ -7,7 +7,7 @@ We propose a [protocol](RFC.md) that web applications use expose the `meta` info
 
 Doko translates to [Where](https://translate.google.com/?sl=auto&tl=en&text=doko&op=translate) in Japanese.
 
-# The Protocol
+# The protocol
 
 The Doko protocol is inspired by standards like [The Open Graph protocol](https://ogp.me/) to describe the meta data, required by the plugin. This is broadly classified into the following sections:
 
@@ -26,16 +26,23 @@ The Doko protocol is inspired by standards like [The Open Graph protocol](https:
 <meta name="doko:postissue" content="https://github.com/anomaly/anomaly/issues/new"/>
 ```
 
-## Available Scripts
+## Developer notes
 
-In the project directory, you can run:
+The Doko plugin is built using [React](https://reactjs.org) and targets Safari, Chrome and FireFox. [Yarn](https://classic.yarnpkg.com/en/docs/getting-started) is our package manager of choice.
 
-## yarn build
+Build each target using the following commands:
 
-Builds the app for Chrome production to the `build` folder.
-
-## yarn build:firefox
-
-Builds the app for Firefox production to the `build` folder. (includes required `id` in manifest)
+- `yarn build` - Builds the app for Chrome production to the `build` folder.
+- `yarn build:firefox`   - Builds the app for Firefox production to the `build` folder. (includes required `id` in manifest)
 
 > Note: both builds build to the same directory, so do one at a time
+
+## Getting help
+
+We welcome feedback, ideas and code contributions. Feel free to fork the repository and open pull requests for us to consider merging back into the project.
+
+Issues are tracked using [Github issues](https://github.com/anomaly/Doko/issues) on this repository. Feel free to open an issue. We ask you be thoughtful and provide as much information as possible using the issue template provided.
+
+## License
+
+Doko (the protocol and plugin) are distributed under the  [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0). See `LICENSE` for further details.
