@@ -172,7 +172,7 @@
     width: 100%;
   }
 
-  .github {
+  .issue {
     margin-top: auto;
     margin-bottom: 15px;
     display: flex;
@@ -188,19 +188,20 @@
     text-decoration: none;
   }
 
-  .github__main {
+  .issue__main {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .github__icon {
+  .issue__icon {
     width: 24px;
     height: 24px;
     margin-right: 6px;
   }
 
-  .github__subtext {
+  .issue__subtext {
+    margin-top: 6px;
     font-weight: 300;
     font-size: 9px;
     line-height: 11px;

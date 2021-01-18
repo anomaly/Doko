@@ -11,7 +11,10 @@
       "matches": ["<all_urls>"]
     }
   ],
-  "web_accessible_resources": ["arrow.svg", "github.svg", "issue.svg"],
+  "web_accessible_resources": [
+    "arrow.svg",
+    "issue.svg"
+  ],
   "icons": {
     "192": "doko.png"
   },

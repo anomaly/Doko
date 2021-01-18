@@ -11,7 +11,6 @@ import {
 } from "./utils";
 
 function Content() {
-
   const [anchor, setAnchor] = useState(null);
 
   useEffect(() => {
@@ -26,33 +25,27 @@ function Content() {
   const [envClass, setEnvClass] = useState<string>("");
 
   useEffect(() => {
-    // const listener = function (changes: any, namespace: any) {
-    //   console.log(changes);
-    //   console.log(namespace);
-    //   if (namespace === "sync") {
-    //     const anchor = changes["dokoAnchor"];
-    //     if (anchor) {
-    //       console.log(anchor);
-    //       setAnchor(anchor.newValue);
-    //     }
-    //   }
-    // };
-
-    const messagelistener = (request: any, sender: any, sendResponse: any) => {
-      console.log("message received");
-      chrome.storage.sync.get(
-        {
-          dokoAnchor: "bottom-left",
-        },
-        (result) => setAnchor(result?.dokoAnchor)
-      );
+    // Handling storage update notifications via message because
+    // the storage.onChange listener is broken in Safari
+    // https://developer.apple.com/forums/thread/670007
+    const messagelistener = (
+      message: any,
+      sender: chrome.runtime.MessageSender,
+      sendResponse: (response?: any) => void
+    ) => {
+      if (message.storage === "updated") {
+        chrome.storage.sync.get(
+          {
+            dokoAnchor: "bottom-left",
+          },
+          (result) => setAnchor(result?.dokoAnchor)
+        );
+      }
     };
 
-    // chrome.storage.onChanged.addListener(listener);
     chrome.runtime.onMessage.addListener(messagelistener);
 
     return () => {
-      // chrome.storage.onChanged.removeListener(listener);
       chrome.runtime.onMessage.removeListener(messagelistener);
     };
   }, []);
@@ -94,7 +87,7 @@ function Content() {
     return chrome.runtime.getURL("arrow.svg");
   }, []);
 
-  const githubImg = useMemo(() => {
+  const issueImg = useMemo(() => {
     return chrome.runtime.getURL("issue.svg");
   }, []);
 
@@ -137,13 +130,13 @@ function Content() {
             href={getReport() as string}
             target="_blank"
             rel="noreferrer"
-            className="github"
+            className="issue"
           >
-            <div className="github__main">
-              <img src={githubImg} alt="github logo" className="github__icon" />
+            <div className="issue__main">
+              <img src={issueImg} alt="issue logo" className="issue__icon" />
               <span>Open an Issue</span>
             </div>
-            <span className="github__subtext">{getReport()}</span>
+            <span className="issue__subtext">{getReport()}</span>
           </a>
         )}
       </div>

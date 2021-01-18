@@ -10,7 +10,6 @@ function App() {
         dokoAnchor: "bottom-left",
       },
       (result) => {
-        console.log(result);
         setCurrentAnchor(result?.dokoAnchor);
       }
     );
@@ -24,7 +23,7 @@ function App() {
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
       tabs.forEach(
         (tab) =>
-          tab.id && chrome.tabs.sendMessage(tab.id, { greeting: "hello" })
+          tab.id && chrome.tabs.sendMessage(tab.id, { storage: "updated" })
       );
     });
   }, []);
