@@ -3,7 +3,7 @@
   "name": "Doko",
   "version": "0.1",
   "description": "A developer focused plugin to help navigate between deployment environments.",
-  "permissions": ["storage"],
+  "permissions": ["activeTab", "storage"],
   "content_scripts": [
     {
       "js": ["static/js/content.js"],
@@ -11,7 +11,7 @@
       "matches": ["<all_urls>"]
     }
   ],
-  "web_accessible_resources": ["/arrow.svg", "/github.svg"],
+  "web_accessible_resources": ["arrow.svg", "github.svg", "issue.svg"],
   "icons": {
     "192": "doko.png"
   },

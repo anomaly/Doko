@@ -10,35 +10,50 @@ import {
   getTitle,
 } from "./utils";
 
-const githubPathRegex = /(?<=\/)([\w-]+(?=[/]|$))/g;
-
 function Content() {
-  const [githubInfo, setGithubInfo] = useState<{ org: string; repo: string }>();
 
   const [anchor, setAnchor] = useState(null);
 
   useEffect(() => {
-    chrome.storage.sync.get({ dokoAnchor: "bottom-left" }, (result) => {
-      setAnchor(result?.dokoAnchor);
-    });
+    chrome.storage.sync.get(
+      {
+        dokoAnchor: "bottom-left",
+      },
+      (result) => setAnchor(result?.dokoAnchor)
+    );
   }, []);
 
   const [envClass, setEnvClass] = useState<string>("");
 
   useEffect(() => {
-    const listener = function (changes: any, namespace: any) {
-      if (namespace === "sync") {
-        const anchor = changes["dokoAnchor"];
-        if (anchor) {
-          console.log(anchor);
-          setAnchor(anchor.newValue);
-        }
-      }
+    // const listener = function (changes: any, namespace: any) {
+    //   console.log(changes);
+    //   console.log(namespace);
+    //   if (namespace === "sync") {
+    //     const anchor = changes["dokoAnchor"];
+    //     if (anchor) {
+    //       console.log(anchor);
+    //       setAnchor(anchor.newValue);
+    //     }
+    //   }
+    // };
+
+    const messagelistener = (request: any, sender: any, sendResponse: any) => {
+      console.log("message received");
+      chrome.storage.sync.get(
+        {
+          dokoAnchor: "bottom-left",
+        },
+        (result) => setAnchor(result?.dokoAnchor)
+      );
     };
-    chrome.storage.onChanged.addListener(listener);
+
+    // chrome.storage.onChanged.addListener(listener);
+    chrome.runtime.onMessage.addListener(messagelistener);
 
     return () => {
-      chrome.storage.onChanged.removeListener(listener);
+      // chrome.storage.onChanged.removeListener(listener);
+      chrome.runtime.onMessage.removeListener(messagelistener);
     };
   }, []);
 
@@ -76,21 +91,11 @@ function Content() {
   }, []);
 
   const arrowImg = useMemo(() => {
-    return chrome.extension.getURL("arrow.svg");
+    return chrome.runtime.getURL("arrow.svg");
   }, []);
 
   const githubImg = useMemo(() => {
-    return chrome.extension.getURL("github.svg");
-  }, []);
-
-  useEffect(() => {
-    const match = getReport()?.match(githubPathRegex) as RegExpMatchArray;
-    if (match) {
-      setGithubInfo({
-        org: match[0],
-        repo: match[1],
-      });
-    }
+    return chrome.runtime.getURL("issue.svg");
   }, []);
 
   return (
@@ -138,11 +143,7 @@ function Content() {
               <img src={githubImg} alt="github logo" className="github__icon" />
               <span>Open an Issue</span>
             </div>
-            {githubInfo && (
-              <span className="github__subtext">
-                {githubInfo?.org}/{githubInfo?.repo}
-              </span>
-            )}
+            <span className="github__subtext">{getReport()}</span>
           </a>
         )}
       </div>

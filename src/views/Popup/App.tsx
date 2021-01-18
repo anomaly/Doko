@@ -5,14 +5,28 @@ function App() {
   const [currentAnchor, setCurrentAnchor] = useState(null);
 
   useEffect(() => {
-    chrome.storage.sync.get({ dokoAnchor: "bottom-left" }, (result) => {
-      setCurrentAnchor(result?.dokoAnchor);
-    });
+    chrome.storage.sync.get(
+      {
+        dokoAnchor: "bottom-left",
+      },
+      (result) => {
+        console.log(result);
+        setCurrentAnchor(result?.dokoAnchor);
+      }
+    );
   }, []);
 
   const onValueChange = useCallback((event) => {
     setCurrentAnchor(event.target.value);
-    chrome.storage.sync.set({ dokoAnchor: event.target.value });
+    chrome.storage.sync.set({
+      dokoAnchor: event.target.value,
+    });
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      tabs.forEach(
+        (tab) =>
+          tab.id && chrome.tabs.sendMessage(tab.id, { greeting: "hello" })
+      );
+    });
   }, []);
 
   return (
