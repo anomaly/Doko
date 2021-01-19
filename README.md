@@ -35,6 +35,8 @@ Build each target using the following commands:
 - `yarn build` - Builds the app for Chrome production to the `build` folder.
 - `yarn build:firefox`   - Builds the app for Firefox production to the `build` folder. (includes required `id` in manifest)
 
+- `yarn zip` - Create an archive from the build directory named `Doko.zip`. The archive will be located in the dist directory
+
 > Note: both builds build to the same directory, so do one at a time
 
 ## Getting help

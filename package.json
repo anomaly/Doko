@@ -3,13 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
     "clsx": "^1.1.1",
     "react": "^17.0.1",
-    "react-app-rewired": "^2.0",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
     "typescript": "^3.8.0"
@@ -19,7 +14,8 @@
     "build": "react-app-rewired build",
     "build:firefox": "yarn build && sed -i '' '$s/}/, \"browser_specific_settings\": {\"gecko\": {\"id\": \"doko@anomaly.net.au\"}}}/' build/manifest.json",
     "test": "react-app-rewired test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "zip": "mkdir -p dist && cd build && zip -r ../dist/Doko.zip * -x '*.DS_Store'"
   },
   "eslintConfig": {
     "extends": "react-app",
@@ -45,6 +41,11 @@
   },
   "devDependencies": {
     "@types/chrome": "^0.0.127",
-    "node-sass": "^4.0.0"
+    "@types/jest": "^26.0.20",
+    "@types/node": "^14.14.21",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "node-sass": "^4.0.0",
+    "react-app-rewired": "^2.1.8"
   }
 }
