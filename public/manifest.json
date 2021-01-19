@@ -3,7 +3,7 @@
   "name": "Doko",
   "version": "0.1",
   "description": "A developer focused plugin to help navigate between deployment environments.",
-  "permissions": ["activeTab", "storage"],
+  "permissions": ["storage"],
   "content_scripts": [
     {
       "js": ["static/js/content.js"],
