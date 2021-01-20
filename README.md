@@ -7,6 +7,9 @@ We propose a [protocol](RFC.md) that web applications use expose the `meta` info
 
 Doko translates to [Where](https://translate.google.com/?sl=auto&tl=en&text=doko&op=translate) in Japanese.
 
+> Screenshot
+![Doko Widget Screenshot](assets/doko-screenshot.png "Doko Widget Screenshot")
+
 # The protocol
 
 The Doko protocol is inspired by standards like [The Open Graph protocol](https://ogp.me/) to describe the meta data, required by the plugin. This is broadly classified into the following sections:
