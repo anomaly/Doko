@@ -1,17 +1,17 @@
 # Doko どこ
 A developer focused plugin to help identify deployment environments.
 
-Doko provides a `meta` tag based standard for web applications to express useful information about the environment which assists developers and testers ensure they are assessing the right environment without having to make visual changes to the user interfaces.
+Doko provides a `meta` tag based standard for web applications to express useful information about the environment. This assists developers and testers to ensure they are accessing the right environment without having to make visual changes to the user interfaces.
 
-In additional we provide browser plugins to overlay this information over a web interface and a set of developer tools for ReactJS.
+In addition we provide browser plugins to overlay this information over a web interface and a set of developer tools for React.
 
-We've proposed a [protocol](RFC.md) that web applications can use expose the `meta` information to Doko which the plugin respects.
+We've proposed a [protocol](RFC.md) that web applications can use to expose the `meta` information to Doko which the plugin respects.
 
 Doko translates to [Where](https://translate.google.com/?sl=auto&tl=en&text=doko&op=translate) in Japanese.
 
 # Browser plugins
 
-We provide browser extensions for Safari, Chrome and Firefox. It presents an overlay with the information for sites containing the `Doko` metatags. The widget is purely ornamental and _does not_ tramper with the application in anyway. There is no depdencies or server side communication.
+We provide browser extensions for Safari, Chrome and Firefox. It presents an overlay with the information for sites containing the `Doko` metatags. The widget is purely ornamental and _does not_ tamper with the application in any way. There are no dependencies or server side communication.
 
 Please read the section about the protocol (or better still the detailed RFC) to understand how you can expose environment relevant information via Doko.
 
@@ -27,7 +27,7 @@ Features:
 
 # React hook
 
-We also provide a [React](http://reactjs.org) [hook](https://reactjs.org/docs/hooks-intro.html) to add the Doko meta tags to the document head. The source is housed in a [separate responsitory](https://github.com/anomaly/use-doko), the package is distributed via [npm](https://npmjs.org/package/@anomalyhq/use-doko).
+We also provide a [React](http://reactjs.org) [hook](https://reactjs.org/docs/hooks-intro.html) to add the Doko meta tags to the document head. The source is housed in a [separate repository](https://github.com/anomaly/use-doko), the package is distributed via [npm](https://npmjs.org/package/@anomalyhq/use-doko).
 
 You can install with `npm`:
 ```bash
@@ -56,7 +56,7 @@ The Doko protocol is inspired by standards like [The Open Graph protocol](https:
 <meta name="doko:fact" content="Server|Netlify"/>
 <meta name="doko:fact" content="Database|PostgreSQL 2.0"/>
 <meta name="doko:fact" content="Node|ap-01a"/>
-<meta name="doko:postissue" content="https://github.com/anomaly/anomaly/issues/new"/>
+<meta name="doko:report" content="https://github.com/anomaly/anomaly/issues/new"/>
 ```
 
 Refer to [RFC-001](https://github.com/anomaly/Doko/blob/master/RFC.md) on the `master` branch for the latest definition of the protocol.
@@ -84,7 +84,7 @@ Issues are tracked using [Github issues](https://github.com/anomaly/Doko/issues)
 
 Suggesting changes to the protocol should be done by issuing pull requests to [RFC-001](https://github.com/anomaly/Doko/blob/master/RFC.md), the core team will review and merge changes where appropriate. If the changes are accepted the core team will update the `README` to make the protocol changes official.
 
-Contributions to the plugin source are welcome. Please feel free to fork this repository and lodge pull requests for reviews.
+Contributions to the plugin source are welcome. Please feel free to fork this repository and lodge pull requests for review.
 
 ## License
 
