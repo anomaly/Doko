@@ -1,9 +1,9 @@
 # Doko どこ
 A developer focused plugin to help identify deployment environments.
 
-Doko proposes a `meta` tag based standard for web applications to express useful information about the environment which assists developers and testers ensure they are assessing the right environment without having to make visual changes to the user interfaces.
+Doko provides a `meta` tag based standard for web applications to express useful information about the environment which assists developers and testers ensure they are assessing the right environment without having to make visual changes to the user interfaces.
 
-In additional we provide browser plugins to visualise this information and a set of developer tools for ReactJS.
+In additional we provide browser plugins to overlay this information over a web interface and a set of developer tools for ReactJS.
 
 We've proposed a [protocol](RFC.md) that web applications can use expose the `meta` information to Doko which the plugin respects.
 
