@@ -1,14 +1,44 @@
 # Doko どこ
-A developer focused plugin to help navigate between deployment environments.
+A developer focused plugin to help identify deployment environments.
 
 Doko proposes a `meta` tag based standard for web applications to express useful information about the environment which assists developers and testers ensure they are assessing the right environment without having to make visual changes to the user interfaces.
 
-We propose a [protocol](RFC.md) that web applications use expose the `meta` information to Doko which the plugin respects.
+In additional we provide browser plugins to visualise this information and a set of developer tools for ReactJS.
+
+We've proposed a [protocol](RFC.md) that web applications can use expose the `meta` information to Doko which the plugin respects.
 
 Doko translates to [Where](https://translate.google.com/?sl=auto&tl=en&text=doko&op=translate) in Japanese.
 
+# Browser plugins
+
+We provide browser extensions for Safari, Chrome and Firefox. It presents an overlay with the information for sites containing the `Doko` metatags. The widget is purely ornamental and _does not_ tramper with the application in anyway. There is no depdencies or server side communication.
+
+Please read the section about the protocol (or better still the detailed RFC) to understand how you can expose environment relevant information via Doko.
+
+Features:
+- Position the widget where it suits you best
+- Show / Hide the widget as required (with a keyboard shortcut or toggle button)
+- Click to reveal the three states
+- Easy click through to an issue tracker
+
 > Screenshot
 ![Doko Widget Screenshot](assets/doko-screenshot.png "Doko Widget Screenshot")
+
+
+# React hook
+
+We also provide a [React](http://reactjs.org) [hook](https://reactjs.org/docs/hooks-intro.html) to add the Doko meta tags to the document head. The source is housed in a [separate responsitory](https://github.com/anomaly/use-doko), the package is distributed via [npm](https://npmjs.org/package/@anomalyhq/use-doko).
+
+You can install with `npm`:
+```bash
+npm install --save @anomalyhq/use-doko
+```
+or with `yarn`:
+```bash
+yarn add @anomalyhq/use-doko
+```
+
+For detailed usage refer to the [README](https://github.com/anomaly/use-doko/blob/main/README.md) in the project repository.
 
 # The protocol
 
@@ -29,6 +59,8 @@ The Doko protocol is inspired by standards like [The Open Graph protocol](https:
 <meta name="doko:postissue" content="https://github.com/anomaly/anomaly/issues/new"/>
 ```
 
+Refer to [RFC-001](https://github.com/anomaly/Doko/blob/master/RFC.md) on the `master` branch for the latest definition of the protocol.
+
 ## Developer notes
 
 The Doko plugin is built using [React](https://reactjs.org) and targets Safari, Chrome and FireFox. [Yarn](https://classic.yarnpkg.com/en/docs/getting-started) is our package manager of choice.
@@ -47,6 +79,12 @@ Build each target using the following commands:
 We welcome feedback, ideas and code contributions. Feel free to fork the repository and open pull requests for us to consider merging back into the project.
 
 Issues are tracked using [Github issues](https://github.com/anomaly/Doko/issues) on this repository. Feel free to open an issue. We ask you be thoughtful and provide as much information as possible using the issue template provided.
+
+## Contributing 
+
+Suggesting changes to the protocol should be done by issuing pull requests to [RFC-001](https://github.com/anomaly/Doko/blob/master/RFC.md), the core team will review and merge changes where appropriate. If the changes are accepted the core team will update the `README` to make the protocol changes official.
+
+Contributions to the plugin source are welcome. Please feel free to fork this repository and lodge pull requests for reviews.
 
 ## License
 
