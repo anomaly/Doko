@@ -15,7 +15,6 @@
 		4E9765AC25B4F02600793116 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E9765AB25B4F02600793116 /* Cocoa.framework */; };
 		4E9765AF25B4F02600793116 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9765AE25B4F02600793116 /* SafariWebExtensionHandler.swift */; };
 		4E9765C425B4F02700793116 /* arrow.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4E9765BC25B4F02700793116 /* arrow.svg */; };
-		4E9765C525B4F02700793116 /* github.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4E9765BD25B4F02700793116 /* github.svg */; };
 		4E9765C625B4F02700793116 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 4E9765BE25B4F02700793116 /* popup.html */; };
 		4E9765C725B4F02700793116 /* asset-manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E9765BF25B4F02700793116 /* asset-manifest.json */; };
 		4E9765C825B4F02700793116 /* static in Resources */ = {isa = PBXBuildFile; fileRef = 4E9765C025B4F02700793116 /* static */; };
@@ -62,7 +61,6 @@
 		4E9765B025B4F02600793116 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E9765B125B4F02600793116 /* Doko_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Doko_Extension.entitlements; sourceTree = "<group>"; };
 		4E9765BC25B4F02700793116 /* arrow.svg */ = {isa = PBXFileReference; lastKnownFileType = text; name = arrow.svg; path = ../../../build/arrow.svg; sourceTree = "<group>"; };
-		4E9765BD25B4F02700793116 /* github.svg */ = {isa = PBXFileReference; lastKnownFileType = text; name = github.svg; path = ../../../build/github.svg; sourceTree = "<group>"; };
 		4E9765BE25B4F02700793116 /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = popup.html; path = ../../../build/popup.html; sourceTree = "<group>"; };
 		4E9765BF25B4F02700793116 /* asset-manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "asset-manifest.json"; path = "../../../build/asset-manifest.json"; sourceTree = "<group>"; };
 		4E9765C025B4F02700793116 /* static */ = {isa = PBXFileReference; lastKnownFileType = folder; name = static; path = ../../../build/static; sourceTree = "<group>"; };
@@ -145,7 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				4E9765BC25B4F02700793116 /* arrow.svg */,
-				4E9765BD25B4F02700793116 /* github.svg */,
 				4E9765BE25B4F02700793116 /* popup.html */,
 				4E9765BF25B4F02700793116 /* asset-manifest.json */,
 				4E9765C025B4F02700793116 /* static */,
@@ -251,7 +248,6 @@
 				4E9765C825B4F02700793116 /* static in Resources */,
 				4E9765C425B4F02700793116 /* arrow.svg in Resources */,
 				4E9765C625B4F02700793116 /* popup.html in Resources */,
-				4E9765C525B4F02700793116 /* github.svg in Resources */,
 				4E9765C925B4F02700793116 /* manifest.json in Resources */,
 				4E9765C725B4F02700793116 /* asset-manifest.json in Resources */,
 			);
