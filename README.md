@@ -90,6 +90,8 @@ We welcome feedback, ideas and code contributions. Feel free to fork the reposit
 
 Issues are tracked using [Github issues](https://github.com/anomaly/Doko/issues) on this repository. Feel free to open an issue. We ask you be thoughtful and provide as much information as possible using the issue template provided.
 
+If you have a general question about how to use Doko, please open a thread in the [Discussions panel](https://github.com/anomaly/Doko/discussions)
+
 ## Contributing 
 
 Suggesting changes to the protocol should be done by issuing pull requests to [RFC-001](https://github.com/anomaly/Doko/blob/master/RFC.md), the core team will review and merge changes where appropriate. If the changes are accepted the core team will update the `README` to make the protocol changes official.
