@@ -1,6 +1,10 @@
 # Doko どこ
 A developer focused plugin to help identify deployment environments.
 
+<p align="center">
+  <img height="256" src="public/doko.png" alt="Doko Icon"/>
+</p>
+
 Doko provides a `meta` tag based standard for web applications to express useful information about the environment. This assists developers and testers to ensure they are accessing the right environment without having to make visual changes to the user interfaces.
 
 In addition we provide browser plugins to overlay this information over a web interface and a set of developer tools for React.
