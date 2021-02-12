@@ -1,3 +1,7 @@
+<p align="center">
+  <img height="256" src="public/doko.png" alt="Doko Icon"/>
+</p>
+
 # Doko どこ
 A developer focused plugin to help identify deployment environments.
 
