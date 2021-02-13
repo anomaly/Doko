@@ -19,6 +19,12 @@ We provide browser extensions for Safari, Chrome and Firefox. It presents an ove
 
 Please read the section about the protocol (or better still the detailed RFC) to understand how you can expose environment relevant information via Doko.
 
+<p align="center">
+  <a href="https://chrome.google.com/webstore/detail/doko/fmffffjkodhpmaghifaeejbkalikdidh">
+    <img src="https://storage.googleapis.com/chrome-gcs-uploader.appspot.com/image/WlD8wC6g8khYWPJUsQceQkhXSlv1/UV4C4ybeBTsZt43U4xis.png" alt="Available on Google Chrome Webstore"/>
+  </a>
+</p>
+
 Features:
 - Position the widget where it suits you best
 - Show / Hide the widget as required (with a keyboard shortcut or toggle button)
@@ -83,6 +89,8 @@ Build each target using the following commands:
 We welcome feedback, ideas and code contributions. Feel free to fork the repository and open pull requests for us to consider merging back into the project.
 
 Issues are tracked using [Github issues](https://github.com/anomaly/Doko/issues) on this repository. Feel free to open an issue. We ask you be thoughtful and provide as much information as possible using the issue template provided.
+
+If you have a general question about how to use Doko, please open a thread in the [Discussions panel](https://github.com/anomaly/Doko/discussions)
 
 ## Contributing 
 
