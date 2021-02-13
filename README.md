@@ -31,9 +31,7 @@ Features:
 - Click to reveal the three states
 - Easy click through to an issue tracker
 
-> Screenshot
 ![Doko Widget Screenshot](assets/doko-screenshot.png "Doko Widget Screenshot")
-
 
 # React hook
 
