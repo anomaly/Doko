@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import ReactDOM from "react-dom";
-import "./index.scss";
+import root from "react-shadow";
 import {
   getEnvironment,
   getFacts,
@@ -9,6 +9,17 @@ import {
   getSubtitle,
   getTitle,
 } from "./utils";
+
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import styles from "./index.scss";
+
+const Container = () => {
+  return (
+    <root.div>
+      <Content />
+    </root.div>
+  );
+};
 
 function Content() {
   const [anchor, setAnchor] = useState(null);
@@ -140,6 +151,7 @@ function Content() {
           </a>
         )}
       </div>
+      <style type="text/css">{styles.toString()}</style>
     </div>
   );
 }
@@ -153,8 +165,8 @@ if (hasDoko) {
 
   ReactDOM.render(
     <React.StrictMode>
-      <Content />
+      <Container />
     </React.StrictMode>,
-    document.getElementById("doko-root")
+    app
   );
 }

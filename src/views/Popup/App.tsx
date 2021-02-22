@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import "./App.scss";
+import styles from "./App.scss";
 
 function App() {
   const [currentAnchor, setCurrentAnchor] = useState(null);
@@ -20,7 +20,7 @@ function App() {
     chrome.storage.sync.set({
       dokoAnchor: event.target.value,
     });
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    chrome.tabs.query({}, function (tabs) {
       tabs.forEach(
         (tab) =>
           tab.id && chrome.tabs.sendMessage(tab.id, { storage: "updated" })
@@ -181,6 +181,7 @@ function App() {
           onChange={onValueChange}
         />
       </div>
+      <style type="text/css">{styles.toString()}</style>
     </div>
   );
 }
