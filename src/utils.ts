@@ -11,7 +11,7 @@ const getDokoTags = (tagName: DokoTag): Array<HTMLMetaElement> | null => {
   );
 };
 
-export const getEnvironment = (): String | null => {
+export const getEnvironment = (): string | null => {
   const tag = getDokoTag("environment");
   if (tag) {
     return tag.content;
@@ -20,7 +20,7 @@ export const getEnvironment = (): String | null => {
   }
 };
 
-export const getTitle = (): String | null => {
+export const getTitle = (): string | null => {
   const tag = getDokoTag("title");
   if (tag) {
     return tag.content;
@@ -29,7 +29,7 @@ export const getTitle = (): String | null => {
   }
 };
 
-export const getSubtitle = (): String | null => {
+export const getSubtitle = (): string | null => {
   const tag = getDokoTag("subtitle");
   if (tag) {
     return tag.content;
@@ -47,7 +47,7 @@ export const getFacts = (): Array<String> | null => {
   }
 };
 
-export const getReport = (): String | null => {
+export const getReport = (): string | null => {
   const tag = getDokoTag("report");
   if (tag) {
     return tag.content;

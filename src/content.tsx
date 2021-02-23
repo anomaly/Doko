@@ -19,6 +19,8 @@ const Container = () => {
   );
 };
 
+const repoRegex = /(?:https?)?:?(?:\/\/)?(?:(?:[a-z-]+\.?)+)\/([a-z-]+)\/([a-z-]+)/g
+
 function Content() {
   const [anchor, setAnchor] = useState(null);
 
@@ -99,6 +101,14 @@ function Content() {
   const issueImg = useMemo(() => {
     return chrome.runtime.getURL("issue.svg");
   }, []);
+  
+  const reportPath = useMemo(() => {
+    const regexMatch = repoRegex.exec(getReport() as string);
+    return {
+      org: regexMatch && regexMatch[1],
+      repo: regexMatch && regexMatch[2]
+    }
+  }, [])
 
   return (
     <div
@@ -145,7 +155,7 @@ function Content() {
               <img src={issueImg} alt="issue logo" className="issue__icon" />
               <span>Open an Issue</span>
             </div>
-            <span className="issue__subtext">{getReport()}</span>
+            <span className="issue__subtext">{reportPath.org}/{reportPath.repo}</span>
           </a>
         )}
       </div>
