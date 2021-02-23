@@ -2,6 +2,7 @@ import clsx from "clsx";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import ReactDOM from "react-dom";
 import root from "react-shadow";
+import styles from "./index.scss";
 import {
   getEnvironment,
   getFacts,
@@ -9,9 +10,6 @@ import {
   getSubtitle,
   getTitle,
 } from "./utils";
-
-// eslint-disable-next-line import/no-webpack-loader-syntax
-import styles from "./index.scss";
 
 const Container = () => {
   return (

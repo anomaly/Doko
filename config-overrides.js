@@ -1,7 +1,6 @@
 const paths = require("react-scripts/config/paths");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ManifestPlugin = require("webpack-manifest-plugin");
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // Export override function(s) via object
 module.exports = {
@@ -64,18 +63,6 @@ function override(config, env) {
     indexHtmlPlugin
   );
 
-  // // Extra HtmlWebpackPlugin instance for options page
-  // const optionsHtmlPlugin = new HtmlWebpackPlugin({
-  //   inject: true,
-  //   chunks: ['options'],
-  //   template: paths.appPublic + '/options.html',
-  //   filename: 'options.html',
-  //   minify: isEnvProduction && minifyOpts,
-  // });
-  // // Add the above HtmlWebpackPlugin instance into config.plugins
-  // // Note: you may remove/comment the next line if you don't need an options page
-  // config.plugins.push(optionsHtmlPlugin);
-
   // Custom ManifestPlugin instance to cast asset-manifest.json back to old plain format
   const manifestPlugin = new ManifestPlugin({
     fileName: "asset-manifest.json",
@@ -87,15 +74,10 @@ function override(config, env) {
     manifestPlugin
   );
 
-  // // Custom MiniCssExtractPlugin instance to get rid of hash in filename template
-  // const miniCssExtractPlugin = new MiniCssExtractPlugin({
-  //   filename: 'static/css/[name].css'
-  // });
-  // Replace original MiniCssExtractPlugin instance in config.plugins with the above one
+  // Remove MiniCssExtractPlugin instance in config.plugins
   config.plugins = replacePlugin(
     config.plugins,
     (name) => /MiniCssExtractPlugin/i.test(name)
-    // miniCssExtractPlugin
   );
 
   // Remove GenerateSW plugin from config.plugins to disable service worker generation

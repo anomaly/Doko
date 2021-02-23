@@ -1,5 +1,4 @@
 .doko {
-
   // Anchors
   &.bottom-left {
     bottom: 0;
@@ -212,15 +211,16 @@
     color: rgba(0, 0, 0, 0.8);
   }
 
+  // Widget States
   &.container.expand {
     width: 350px;
   }
 
   &.container.open {
     height: 300px;
-  }
 
-  &.container.open .arrow {
-    transform: rotate(90deg);
+    .arrow {
+      transform: rotate(90deg);
+    }
   }
 }
