@@ -21,6 +21,7 @@
 		4E9765C925B4F02700793116 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E9765C125B4F02700793116 /* manifest.json */; };
 		4E9765CA25B4F02700793116 /* options.html in Resources */ = {isa = PBXBuildFile; fileRef = 4E9765C225B4F02700793116 /* options.html */; };
 		4E9765CB25B4F02700793116 /* doko.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E9765C325B4F02700793116 /* doko.png */; };
+		4EA891C825E48250009CA140 /* issue.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4EA891C725E48250009CA140 /* issue.svg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		4E9765C125B4F02700793116 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../../build/manifest.json; sourceTree = "<group>"; };
 		4E9765C225B4F02700793116 /* options.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = options.html; path = ../../../build/options.html; sourceTree = "<group>"; };
 		4E9765C325B4F02700793116 /* doko.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = doko.png; path = ../../../build/doko.png; sourceTree = "<group>"; };
+		4EA891C725E48250009CA140 /* issue.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = issue.svg; path = ../../../public/issue.svg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 		4E9765BB25B4F02700793116 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4EA891C725E48250009CA140 /* issue.svg */,
 				4E9765BC25B4F02700793116 /* arrow.svg */,
 				4E9765BE25B4F02700793116 /* popup.html */,
 				4E9765BF25B4F02700793116 /* asset-manifest.json */,
@@ -243,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EA891C825E48250009CA140 /* issue.svg in Resources */,
 				4E9765CB25B4F02700793116 /* doko.png in Resources */,
 				4E9765CA25B4F02700793116 /* options.html in Resources */,
 				4E9765C825B4F02700793116 /* static in Resources */,

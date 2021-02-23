@@ -10,7 +10,7 @@ import SafariServices.SFSafariApplication
 import SafariServices.SFSafariExtensionManager
 
 let appName = "Doko"
-let extensionBundleIdentifier = "com.yourCompany.Doko.Extension"
+let extensionBundleIdentifier = "au.net.anomaly.Doko.Doko-Extension"
 
 class ViewController: NSViewController {
 
